@@ -1,0 +1,1 @@
+insert into task(created, title, summary, status) values('2018-05-22', 'Shop fruits', 'I need apples, kiwis and tangerines', 0);

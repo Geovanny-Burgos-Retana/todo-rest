@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    properties:
+      hibernate.hbm2ddl.auto: create
+      hibernate.temp.use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+  datasource:
+    platform: postgresql
+#    url: heroku run echo \$JDBC_DATABASE_URL
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+    hikari:
+      connection-timeout: 3000
+      maximum-pool-size: 10
+server:
+  port: ${PORT:5000}

@@ -1,0 +1,1 @@
+web: java -jar -Dspring.profiles.active=heroku target/todo-rest-0.0.1-SNAPSHOT.jar
