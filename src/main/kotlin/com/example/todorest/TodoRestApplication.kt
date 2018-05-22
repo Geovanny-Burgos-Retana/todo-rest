@@ -51,6 +51,9 @@ class TaskService(val todoRepository : TaskRepository) {
         return this.todoRepository.findAll()
     }
 
+    fun addTask(task: Task) {
+        this.todoRepository.save(task)
+    }
 }
 
 @RestController
@@ -60,6 +63,11 @@ class TaskController(val todoService : TaskService) {
     @GetMapping("", "/")
     fun allTasks() : List<Task> {
         return this.todoService.getTasks()
+    }
+
+    @PostMapping("", "/")
+    fun addTask(@RequestBody newTask : Task){
+        this.todoService.addTask(newTask)
     }
 
 }
